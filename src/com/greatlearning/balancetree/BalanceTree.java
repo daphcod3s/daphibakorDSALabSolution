@@ -1,11 +1,21 @@
 package com.greatlearning.balancetree;
 import java.util.*;
 
-class FindSumPair{
+class BalanceTree{
 	static class Node{
 		int nodeData;
 		Node leftNode, rightNode;
 	};
+	
+	static Node NewNode(int nodeData)
+	{
+		
+		Node temp = new Node();
+		temp.nodeData = nodeData;
+		temp.leftNode=null;
+		temp.rightNode=null;
+		return temp;
+	}
 	
 	public Node insert (Node root, int key)
 	{
@@ -67,12 +77,12 @@ public static void main(String[] args) {
 
 	Node root = null;
 
-	FindSumPair findSP = new FindSumPair();
+	BalanceTree findSP = new BalanceTree();
 	root = findSP.insert(root,40);
 	root = findSP.insert(root,20);
 	root = findSP.insert(root,60);
 	
-	int sum = 30;
+	int sum = 60;
 	findSP.findPairWithGivenSum(root,sum);
 }
 }
